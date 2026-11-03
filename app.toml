@@ -6,10 +6,10 @@
 [app]
 # Name of the built executable. No spaces, slashes, or colons --
 # this becomes, for example, MyAppName.exe / MyAppName.app.
-name = "MyAppName"
+name = "GuessingGame"
 
 # Friendly name, used in the release notes and README only.
-display_name = "My App Name"
+display_name = "Guessing Game"
 
 # The Python file PyInstaller starts from.
 entrypoint = "app.py"
@@ -29,7 +29,7 @@ onefile = true
 windowed = true
 
 # Modules PyInstaller's analysis can't find on its own.
-hidden_imports = []
+hidden_imports = ["analyticskit"]
 
 # Modules to leave out. Shrinks the binary. Safe only if nothing imports them.
 exclude_modules = [
@@ -43,8 +43,7 @@ exclude_modules = [
 
 # Any other PyInstaller flags, one per entry.
 # Example: "--add-data=data/rates.csv:."
-extra_args = []
-
+extra_args = ["--collect-all=analyticskit"]
 
 [build]
 # Which platforms to build. Comment out any you don't need --
